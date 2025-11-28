@@ -1,0 +1,6 @@
+#!/bin/sh
+
+while true; do
+  echo "tick"
+  sleep 1
+done

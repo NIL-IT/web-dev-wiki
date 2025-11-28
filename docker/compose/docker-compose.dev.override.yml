@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: ../..
+      dockerfile: docker/Dockerfile
+    container_name: DevAppTemplate
+    command: ./scripts/dev.sh
+    env_file:
+      - ../../.env.dev
+    volumes:
+      - ../../logs/:/app/logs/
+
+  db:
+    container_name: DevDBTemplate
+    ports:
+      - "${DB_PORT}:5432"

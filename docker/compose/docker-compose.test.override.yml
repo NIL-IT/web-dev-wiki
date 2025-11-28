@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: ../..
+      dockerfile: docker/Dockerfile
+    container_name: TestAppTemplate
+    command: ./scripts/test.sh
+    env_file:
+      - ../../.env.test
+    volumes:
+      - ../../logs/:/app/logs/
+    restart: no
+
+  db:
+    container_name: TestDBTemplate

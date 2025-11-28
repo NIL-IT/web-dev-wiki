@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: ../..
+      dockerfile: docker/Dockerfile
+    container_name: ProdAppTemplate
+    command: ./scripts/prod.sh
+    env_file:
+      - ../../.env.prod
+
+  db:
+    container_name: ProdDBTemplate
